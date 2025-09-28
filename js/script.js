@@ -569,7 +569,9 @@ document.getElementById("whatsappBtn").addEventListener("click", () => {
   message += `\nTotal: $${ELEMENTS.modalTotal.textContent}`;
 
   // Abrimos WhatsApp
-  window.open(`https://wa.me/5491151176552?text=${encodeURIComponent(message)}`, "_blank");
+  const phoneNumber = '5491151176552';
+  const apiUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+  window.open(apiUrl, '_blank');
   // Vaciar carrito y actualizar
   state.cart = [];
   updateCart();
