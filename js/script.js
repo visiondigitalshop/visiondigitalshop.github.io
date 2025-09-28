@@ -415,6 +415,8 @@ function loadTheme() {
 
 
 
+
+
   function saveCart() {
     localStorage.setItem('cart', JSON.stringify(state.cart));
   }
@@ -567,8 +569,7 @@ document.getElementById("whatsappBtn").addEventListener("click", () => {
   message += `\nTotal: $${ELEMENTS.modalTotal.textContent}`;
 
   // Abrimos WhatsApp
-  window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank");
-
+  window.open(`https://wa.me/5491151176552?text=${encodeURIComponent(message)}`, "_blank");
   // Vaciar carrito y actualizar
   state.cart = [];
   updateCart();
