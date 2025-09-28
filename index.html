@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ecommerce </title>
+  <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img id="logo" style="width: 200px;" src="../img/logo.png" alt="Logo">
+
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="Buscar productos..." />
+        <select id="categoryFilter">
+          <option value="all">Todas las categorías</option>
+        </select>
+        <select id="sortSelect">
+          <option value="default">Orden: predeterminado</option>
+          <option value="price-asc">Precio ↑</option>
+          <option value="price-desc">Precio ↓</option>
+        </select>
+
+       
+
+        <div class="price-range">
+          <input id="minPrice" type="number" placeholder="Mínimo $" min="0" />
+          <input id="maxPrice" type="number" placeholder="Máximo $" min="0" />
+          
+        </div>
+
+        <button id="cartBtn" class="btn">Carrito (<span id="cartCount">0</span>)</button>
+        <button id="darkModeBtn" class="btn">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    
+
+    <section class="products-section" id="productsContainer">
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Entrega Final - Frontend</div>
+  </footer>
+
+
+  <div id="cartPanel" class="panel-overlay hidden">
+    <div class="panel" role="dialog" aria-modal="true">
+      <header class="panel-header">
+        <h2>Carrito</h2>
+        <button id="closeCart" class="btn small">Cerrar</button>
+      </header>
+
+      <div class="panel-body" id="cartItems">
+
+      </div>
+
+      <footer class="panel-footer">
+        <div class="total">
+          <strong>Total: $<span id="cartTotal">0</span></strong>
+        </div>
+        <div class="panel-actions">
+          <button id="clearCart" class="btn muted">Vaciar carrito</button>
+          <button id="checkoutBtn" class="btn">Finalizar compra</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+<div id="checkoutModal" class="modal-overlay hidden">
+  <div class="modal">
+    <header class="modal-header">
+      <h2>Finalizar Compra</h2>
+      <button id="closeCheckout" class="btn small">Cerrar</button>
+    </header>
+    <div class="modal-body">
+      <label>Nombre completo: <input type="text" id="customerName"></label>
+      <label>Dirección: <input type="text" id="customerAddress"></label>
+      <label>Provincia: <input type="text" id="customerProvince"></label>
+      <label>Teléfono: <input type="text" id="customerPhone"></label>
+
+      <h3>Productos:</h3>
+      <div id="checkoutItems"></div>
+
+      <p>Total a pagar: $<span id="modalTotal">0</span></p>
+      <button id="whatsappBtn" class="btn">Enviar a WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
