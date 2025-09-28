@@ -416,30 +416,10 @@ function loadTheme() {
 
 // Objeto de provincias
 const provincias = {
-  BA: "Buenos Aires",
-  CABA: "Ciudad Autónoma de Buenos Aires",
-  CAT: "Catamarca",
-  CHA: "Chaco",
-  CHU: "Chubut",
-  CBA: "Córdoba",
-  COR: "Corrientes",
-  ER: "Entre Ríos",
-  FOR: "Formosa",
-  JUJ: "Jujuy",
-  LP: "La Pampa",
-  LR: "La Rioja",
-  MZA: "Mendoza",
-  MIS: "Misiones",
-  NQN: "Neuquén",
-  RN: "Río Negro",
-  SAL: "Salta",
-  SJ: "San Juan",
-  SL: "San Luis",
-  SC: "Santa Cruz",
-  SF: "Santa Fe",
-  SE: "Santiago del Estero",
-  TF: "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
-  TUC: "Tucumán"
+   NORTE: "Zona Norte",
+  SUR: "Zona Sur",
+  OESTE: "Zona Oeste",
+  CABA: "Capital Federal (CABA)"
 };
 
 // Llenar el select
@@ -596,7 +576,7 @@ document.getElementById("whatsappBtn").addEventListener("click", () => {
   }
 
   // Generar mensaje de WhatsApp
-  let message = `*Nuevo pedido*\n\nNombre: ${name}\n Dirección: ${address}\n Provincia: ${province}\nTeléfono: ${phone}\n\n*Productos:*\n`;
+  let message = `*Nuevo pedido*\n\nNombre: ${name}\n Dirección: ${address}\n Zona: ${province}\nTeléfono: ${phone}\n\n*Productos:*\n`;
 
   state.cart.forEach(cartItem => {
     const product = PRODUCTS.find(p => p.id === cartItem.id);
