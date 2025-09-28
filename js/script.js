@@ -23,7 +23,7 @@ const PRODUCTS = [
     {
         "id": 1,
         "title": "TV BOX con magis tv",
-        "price": 48000.0,
+        "price": 41600.0,
         "category": "TV BOX"
     },
     {
@@ -35,7 +35,7 @@ const PRODUCTS = [
     {
         "id": 3,
         "title": "Proyector TV box con magis tv",
-        "price": 120000.0,
+        "price": 96000.0,
         "category": "PROYECTORES"
     },
     {
@@ -71,13 +71,13 @@ const PRODUCTS = [
     {
         "id": 9,
         "title": "Cabina con Luz UV para uñas",
-        "price": 39000.0,
+        "price": 33800.0,
         "category": "UÑAS"
     },
     {
         "id": 10,
         "title": "Camára con Impresora",
-        "price": 52500.0,
+        "price": 45500.0,
         "category": "CÁMARAS"
     },
     {
@@ -95,31 +95,31 @@ const PRODUCTS = [
     {
         "id": 13,
         "title": "Consola tipo Game Boy con juegos de Sega family etc",
-        "price": 37500.0,
+        "price": 35000.0,
         "category": "CONSOLAS"
     },
     {
         "id": 14,
         "title": "Drone con Camara y control K11 dispara bolitas de hidrogel",
-        "price": 150000.0,
+        "price": 110000.0,
         "category": "DRON"
     },
     {
         "id": 15,
         "title": "Kit para Video Selfie",
-        "price": 24300.0,
+        "price": 22680.0,
         "category": "CÁMARAS"
     },
     {
         "id": 16,
         "title": "Parlante Portatil",
-        "price": 39000.0,
+        "price": 33800.0,
         "category": "PARLANTES"
     },
     {
         "id": 17,
         "title": "Parlante JBL",
-        "price": 37500.0,
+        "price": 32500.0,
         "category": "PARLANTES"
     },
     {
@@ -251,7 +251,7 @@ const PRODUCTS = [
     {
         "id": 39,
         "title": "Adaptador Usb Tipo C A Rj45 Ethernet Red Lan",
-        "price": 22089.375,
+        "price": 19144,
         "category": "ADAPTADORES"
     },
     {
