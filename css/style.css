@@ -465,7 +465,8 @@ button:hover {
   border-bottom-color: #333;
 }
 
-.dark-mode #checkoutModal .modal-body input[type="text"] {
+.dark-mode #checkoutModal .modal-body input[type="text"],
+.dark-mode #checkoutModal .modal-body select {
   background: #2a2a2a;
   border-color: #444;
   color: var(--text);
