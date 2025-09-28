@@ -511,7 +511,7 @@ function updateCart() {
     
 
     ELEMENTS.cartItems.innerHTML += `
-      <div class="cart-item" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ccc;">
+      <div class="cart-item" style="display: flex; gap: 20px; align-items: center; padding: 10px; border-bottom: 1px solid #ccc;">
         <img src="../img/${product.id}.jpg" alt="${product.title}" class="cart-item-image" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
         <p>${product.title} x ${cartItem.quantity} - $${itemCost.toLocaleString()}</p>
       </div>
