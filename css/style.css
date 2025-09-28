@@ -269,7 +269,7 @@ button:hover {
 .product-price {
   font-weight: 700;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .add-to-cart-btn {
