@@ -414,7 +414,43 @@ function loadTheme() {
   }
 
 
+// Objeto de provincias
+const provincias = {
+  BA: "Buenos Aires",
+  CABA: "Ciudad Autónoma de Buenos Aires",
+  CAT: "Catamarca",
+  CHA: "Chaco",
+  CHU: "Chubut",
+  CBA: "Córdoba",
+  COR: "Corrientes",
+  ER: "Entre Ríos",
+  FOR: "Formosa",
+  JUJ: "Jujuy",
+  LP: "La Pampa",
+  LR: "La Rioja",
+  MZA: "Mendoza",
+  MIS: "Misiones",
+  NQN: "Neuquén",
+  RN: "Río Negro",
+  SAL: "Salta",
+  SJ: "San Juan",
+  SL: "San Luis",
+  SC: "Santa Cruz",
+  SF: "Santa Fe",
+  SE: "Santiago del Estero",
+  TF: "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+  TUC: "Tucumán"
+};
 
+// Llenar el select
+const select = document.getElementById("customerProvince");
+
+for (const [codigo, nombre] of Object.entries(provincias)) {
+  const option = document.createElement("option");
+  option.value = codigo;
+  option.textContent = nombre;
+  select.appendChild(option);
+}
 
 
   function saveCart() {
@@ -549,7 +585,9 @@ ELEMENTS.closeCheckout.addEventListener("click", () => {
 document.getElementById("whatsappBtn").addEventListener("click", () => {
   const name = document.getElementById("customerName").value.trim();
   const address = document.getElementById("customerAddress").value.trim();
-  const province = document.getElementById("customerProvince").value.trim();
+  const provinceCode = document.getElementById("customerProvince").value.trim();
+  const province = provincias[provinceCode] || "";
+  console.log(province)
   const phone = document.getElementById("customerPhone").value.trim();
 
   if (!name || !address || !province || !phone) {
