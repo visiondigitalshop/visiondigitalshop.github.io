@@ -570,7 +570,7 @@ document.getElementById("whatsappBtn").addEventListener("click", () => {
 
   // Abrimos WhatsApp
   const phoneNumber = '5491151176552';
-  const apiUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+  const apiUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`; 
   window.open(apiUrl, '_blank');
   // Vaciar carrito y actualizar
   state.cart = [];
