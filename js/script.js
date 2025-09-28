@@ -581,7 +581,7 @@ document.getElementById("whatsappBtn").addEventListener("click", () => {
   state.cart.forEach(cartItem => {
     const product = PRODUCTS.find(p => p.id === cartItem.id);
     const itemCost = product.price * cartItem.quantity;
-    message += `${cartItem.quantity} x ${product.title}: $${itemCost.toLocaleString()}\n`;
+    message += `${cartItem.quantity} x ${product.title}: $${itemCost.toLocaleString()} [ ID ${cartItem.id} ] \n`;
   });
 
   message += `\nTotal: $${ELEMENTS.modalTotal.textContent}`;
