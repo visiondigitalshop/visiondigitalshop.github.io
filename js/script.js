@@ -468,7 +468,8 @@ for (const [codigo, nombre] of Object.entries(provincias)) {
         <div class="product-info">
           <h3 class="product-title">${p.id}-${p.title}</h3>
           <div class="product-meta">
-            <span class="product-price">$${p.price.toLocaleString()}</span>
+            <span class="product-price">$${p.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          }</span>
            <span class="product-category badge" style="background-color: ${CATEGORY_COLORS[p.category]};">
             ${CATEGORIES[p.category]}
           </span>
@@ -513,7 +514,8 @@ function updateCart() {
     ELEMENTS.cartItems.innerHTML += `
       <div class="cart-item" style="display: flex; gap: 20px; align-items: center; padding: 10px; border-bottom: 1px solid #ccc;">
         <img src="../img/${product.id}.jpg" alt="${product.title}" class="cart-item-image" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
-        <p>${product.title} x ${cartItem.quantity} - $${itemCost.toLocaleString()}</p>
+        <p>${product.title} x ${cartItem.quantity} - $${itemCost.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          }</p>
       </div>
     `;
   });
