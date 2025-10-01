@@ -552,7 +552,7 @@ function openCheckout() {
   ELEMENTS.checkoutItems.innerHTML = state.cart.map(cartItem => {
     const product = PRODUCTS.find(p => p.id === cartItem.id);
     const itemCost = product.price * cartItem.quantity;
-    return `<p>${product.title} x ${cartItem.quantity} - $${itemCost.toLocaleString()}</p>`;
+    return `<p>${product.title} x ${cartItem.quantity} - $${formatPrice(itemCost)}</p>`;
   }).join("");
 
   ELEMENTS.checkoutModal.classList.remove("hidden");
@@ -589,7 +589,7 @@ document.getElementById("whatsappBtn").addEventListener("click", () => {
   state.cart.forEach(cartItem => {
     const product = PRODUCTS.find(p => p.id === cartItem.id);
     const itemCost = product.price * cartItem.quantity;
-    message += `${cartItem.quantity} x ${product.title}: $${itemCost.toLocaleString()} [ ID ${cartItem.id} ] \n`;
+    message += `${cartItem.quantity} x ${product.title}: $${formatPrice(itemCost)} [ ID ${cartItem.id} ] \n`;
   });
 
   message += `\nTotal: $${ELEMENTS.modalTotal.textContent}`;
