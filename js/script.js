@@ -392,6 +392,14 @@ ELEMENTS.checkoutModal.addEventListener("click", (e) => {
     renderProducts(list);
   }
 
+  function formatPrice(value) {
+  // Si tiene decimales distintos de 0, muestra hasta 2, si no, sin decimales
+  return value % 1 === 0
+    ? value.toLocaleString("es-AR", { minimumFractionDigits: 0, maximumFractionDigits: 0 })
+    : value.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+
   function toggleDarkMode() {
   const isDark = document.body.classList.toggle("dark-mode");
   ELEMENTS.darkModeBtn.textContent = isDark ? "🌞" : "🌙";
@@ -468,8 +476,7 @@ for (const [codigo, nombre] of Object.entries(provincias)) {
         <div class="product-info">
           <h3 class="product-title">${p.id}-${p.title}</h3>
           <div class="product-meta">
-            <span class="product-price">$${p.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-          }</span>
+            <span class="product-price">$${formatPrice(p.price)}</span>
            <span class="product-category badge" style="background-color: ${CATEGORY_COLORS[p.category]};">
             ${CATEGORIES[p.category]}
           </span>
@@ -514,8 +521,7 @@ function updateCart() {
     ELEMENTS.cartItems.innerHTML += `
       <div class="cart-item" style="display: flex; gap: 20px; align-items: center; padding: 10px; border-bottom: 1px solid #ccc;">
         <img src="../img/${product.id}.jpg" alt="${product.title}" class="cart-item-image" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
-        <p>${product.title} x ${cartItem.quantity} - $${itemCost.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-          }</p>
+        <p>${product.title} x ${cartItem.quantity} - $${formatPrice(itemCost)}</p>
       </div>
     `;
   });
