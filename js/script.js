@@ -495,6 +495,21 @@ for (const [codigo, nombre] of Object.entries(provincias)) {
     else state.cart.push({ id, quantity: 1 });
     updateCart();
   };
+
+  window.changeQuantity = function (id, delta) {
+    const item = state.cart.find(i => i.id === id);
+    if (item) {
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        if (confirm("¿Querés eliminar este producto del carrito?")) {
+          state.cart = state.cart.filter(i => i.id !== id);
+        } else {
+          item.quantity = 1;
+        }
+      }
+    }
+    updateCart();
+  };
   
 function updateCart() {
 
@@ -520,6 +535,8 @@ function updateCart() {
       <div class="cart-item" style="display: flex; gap: 20px; align-items: center; padding: 10px; border-bottom: 1px solid #ccc;">
         <img src="../img/${product.id}.jpg" alt="${product.title}" class="cart-item-image" style="width: 50px; height: 50px; object-fit: cover; border-radius: 10px;">
         <p>${product.title} x ${cartItem.quantity} - $${formatPrice(itemCost)}</p>
+        <button onclick="changeQuantity(${product.id}, 1)">+</button>
+        <button onclick="changeQuantity(${product.id}, -1)">-</button>
       </div>
     `;
   });
