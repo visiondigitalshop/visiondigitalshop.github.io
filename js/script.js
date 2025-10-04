@@ -393,10 +393,8 @@ ELEMENTS.checkoutModal.addEventListener("click", (e) => {
   }
 
   function formatPrice(value) {
-  // Si tiene decimales distintos de 0, muestra hasta 2, si no, sin decimales
-  return value % 1 === 0
-    ? value.toLocaleString("es-AR", { minimumFractionDigits: 0, maximumFractionDigits: 0 })
-    : value.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  // Redondea siempre hacia arriba y sin decimales
+  return Math.ceil(value).toLocaleString("es-AR", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 }
 
 
